@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <header>
-      <h3>LOGO</h3>
+      <h3>Sky Properties</h3>
       <nav ref={navRef}>
         <a href="/#">Home</a>
         <a href="/#">Client</a>
@@ -27,9 +27,9 @@ function Navbar() {
           <FaTimes />
         </button>
       </nav>
-      <button className="nav-btn" onClick={showNavbar}>
+      
         <FaBars />
-      </button>
+      
     </header>
   );
 }
