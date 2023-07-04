@@ -21,14 +21,14 @@ function Navbar() {
         <a href="/#">Home</a>
         <a href="/#">Client</a>
         <a href="/#">Favorite</a>
-        <a href="/SignIn">Sign In</a>
-        <a href="/SignUp">Sign Up</a>
+        <a href="/#">Sign In</a>
+        <a href="/#">Sign Up</a>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
           <FaTimes />
         </button>
       </nav>
       
-        <FaBars />
+      <FaBars />
       
     </header>
   );
