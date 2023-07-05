@@ -12,8 +12,8 @@ const BackgroundImage = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  text-align: center;
-  color: black;
+  text-align: centre;
+  color: white;
 `;
 
 const Title = styled.h1`
