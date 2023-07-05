@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
 const SignUpPage = () => {
-  const [firstName, setFirstName] = useState('');
-  const [middleName, setMiddleName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [username, setUsername] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [userType, setUserType] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,9 +13,8 @@ const SignUpPage = () => {
     // Perform sign-up logic or API call here
 
     // Reset form fields
-    setFirstName('');
-    setMiddleName('');
-    setLastName('');
+    setUsername('');
+    setPhoneNumber('');
     setUserType('');
     setEmail('');
     setPassword('');
@@ -26,29 +24,20 @@ const SignUpPage = () => {
   const renderSignUpForm = () => (
     <form onSubmit={handleSubmit} className="signup-form">
       <label>
-        First Name:
+        Username:
         <input
           type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </label>
       <br />
       <label>
-        Middle Name:
+        Phone Number:
         <input
           type="text"
-          value={middleName}
-          onChange={(e) => setMiddleName(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Last Name:
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
         />
       </label>
       <br />
