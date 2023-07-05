@@ -26,7 +26,7 @@ function Navbar() {
         </button>
       </nav>
       
-      <FaBars />
+      {/* <FaBars /> */}
       
     </header>
   );
