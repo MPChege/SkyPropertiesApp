@@ -44,10 +44,6 @@ const LandingHome = () => {
         <Subtitle>
           Welcome to our House Dealership. Find your dream home today
         </Subtitle>
-        {/* <ButtonWrapper>
-<Button>Login</Button>
-<Button>Sign In</Button>
-</ButtonWrapper> */}
         <Quote>"Home is where your story begins."</Quote>
       </ContentWrapper>
     </BackgroundImage>
