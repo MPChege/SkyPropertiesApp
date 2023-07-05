@@ -1,12 +1,15 @@
 
 import './App.css';
-
+import LandingHome from './components/LandingHome'; 
 function App() {
-  return (
+  return(
+    <div className='App'>
+       <LandingHome />
 
-    <div> hello world </div>
-    
-  );
+    </div>
+  )
+  
+  
 }
 
 export default App;
