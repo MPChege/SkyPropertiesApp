@@ -9,7 +9,6 @@
 
 body {
   background-image: url('https://images.unsplash.com/photo-1515541369882-f47fa81d1454?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
-  
   background: #f5f5f5;
   display: flex;
   justify-content: center;
@@ -18,18 +17,18 @@ body {
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   margin: -20px 0 50px;
-  position: relative; /* Added */
+  position: relative;
 }
-
-body { /* Added */
+/* 
+body:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5); /* Adjust the overlay color and transparency */
-}
+  background-color: rgba(255, 255, 255, 0.5);
+} */
 
 :root {
   --mainColor: #315e6b;
@@ -61,7 +60,7 @@ nav {
 
 nav a {
   margin: 0 1rem;
-  color: #fff; /* Change to a visible color */
+  color: var(--textColor);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -127,7 +126,6 @@ nav {
 .login-page,
 .signup-page {
   background-image: url('https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -141,12 +139,12 @@ nav {
 .credentials,
 .signup-form,
 .login-form {
-  background-color: #315e6b;
+  background-color: rgba(49, 94, 107, 0.8);
   padding: 20px;
   border-radius: 5px;
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .credentials h2,
@@ -154,17 +152,21 @@ nav {
 .login-form h2 {
   font-size: 24px;
   margin-bottom: 10px;
+  font-family: "Titillium Web", sans-serif;
+  color: var(--textColor);
 }
 
 .credentials p,
 .thank-you-message p {
   font-size: 16px;
+  color: var(--textColor);
 }
 
 .form-group label {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 8px;
+  color: var(--textColor);
 }
 
 .form-group input[type="text"],
@@ -209,10 +211,34 @@ nav {
 
 .thank-you-message {
   text-align: center;
-  color: #fff;
+  color: var(--textColor);
 }
 
 .thank-you-message h2 {
   font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.logout-button {
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--mainColorLight);
+}
+
+.welcome-message {
+  font-size: 24px;
+  font-family: "Titillium Web", sans-serif;
+  color: var(--textColor);
   margin-bottom: 10px;
 }
