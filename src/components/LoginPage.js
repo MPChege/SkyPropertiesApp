@@ -37,33 +37,27 @@ const LoginPage = () => {
     );
   };
 
-  const renderPasswordReset = () => (
-    <div className="password-reset">
-      <h2>Password Reset</h2>
-      {/* Include password reset functionality here */}
-    </div>
-  );
-
   const renderLoginForm = () => (
     <form onSubmit={handleLogin} className="login-form">
-      <label>
-        Email:
+      <h2>Login</h2>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
+          id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      </label>
-      <br />
-      <label>
-        Password:
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
+          id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </label>
-      <br />
+      </div>
       <button type="submit">Login</button>
     </form>
   );
@@ -71,10 +65,7 @@ const LoginPage = () => {
   return (
     <div className="login-page">
       {loggedIn ? (
-        <>
-          {renderCredentials()}
-          {renderPasswordReset()}
-        </>
+        renderCredentials()
       ) : (
         renderLoginForm()
       )}

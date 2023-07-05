@@ -55,7 +55,6 @@ nav a {
   transition: color 0.3s ease;
 }
 
-
 nav a:hover {
   color: var(--secondaryColor);
 }
@@ -112,6 +111,8 @@ nav {
     font-size: 1.5rem;
   }
 }
+
+.login-page,
 .signup-page {
   background-image: url('https://images.unsplash.com/photo-1515541369882-f47fa81d1454?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
   background-size: cover;
@@ -124,8 +125,9 @@ nav {
   justify-content: center;
 }
 
-
-.signup-form {
+.credentials,
+.signup-form,
+.login-form {
   background-color: #d2c984;
   padding: 20px;
   border-radius: 5px;
@@ -134,16 +136,36 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.signup-form label {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 8px
+.credentials h2,
+.signup-form h2,
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
+.credentials p,
+.thank-you-message p {
+  font-size: 16px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select,
 .signup-form input[type="text"],
 .signup-form input[type="email"],
 .signup-form input[type="password"],
-.signup-form select {
+.signup-form select,
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -152,7 +174,9 @@ nav {
   margin-bottom: 10px;
 }
 
-.signup-form button[type="submit"] {
+.credentials button[type="submit"],
+.signup-form button[type="submit"],
+.login-form button[type="submit"] {
   background-color: var(--mainColor);
   color: #fff;
   border: none;
@@ -164,7 +188,9 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-.signup-form button[type="submit"]:hover {
+.credentials button[type="submit"]:hover,
+.signup-form button[type="submit"]:hover,
+.login-form button[type="submit"]:hover {
   background-color: var(--mainColorLight);
 }
 
@@ -176,90 +202,4 @@ nav {
 .thank-you-message h2 {
   font-size: 24px;
   margin-bottom: 10px;
-}
-
-.thank-you-message p {
-  font-size: 16px;
-}
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
-.login-form {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.login-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.login-form button[type="submit"] {
-  background-color: #6b6b31;
-  color: #ffffff;
-  border: none;
-  border-radius: 3px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.login-form button[type="submit"]:hover {
-  background-color: #5767aa;
-}
-
-.credentials {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.credentials h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.credentials p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.password-reset {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.password-reset h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.login-page > .login-form,
-.login-page > .credentials,
-.login-page > .password-reset {
-  width: 100%;
-  max-width: 400px;
-}
-
-.login-page button {
-  display: block;
-  margin: 0 auto;
 }
