@@ -9,6 +9,7 @@
 
 body {
   background-image: url('https://images.unsplash.com/photo-1515541369882-f47fa81d1454?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+  
   background: #f5f5f5;
   display: flex;
   justify-content: center;
@@ -17,10 +18,21 @@ body {
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   margin: -20px 0 50px;
+  position: relative; /* Added */
+}
+
+body { /* Added */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the overlay color and transparency */
 }
 
 :root {
-  --mainColor: #6b6b31;
+  --mainColor: #315e6b;
   --mainColorLight: #5767aa;
   --secondaryColor: #db2b39;
   --textColor: #fffefe;
@@ -114,7 +126,8 @@ nav {
 
 .login-page,
 .signup-page {
-  background-image: url('https://images.unsplash.com/photo-1515541369882-f47fa81d1454?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+  background-image: url('https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -128,7 +141,7 @@ nav {
 .credentials,
 .signup-form,
 .login-form {
-  background-color: #d2c984;
+  background-color: #315e6b;
   padding: 20px;
   border-radius: 5px;
   max-width: 400px;
