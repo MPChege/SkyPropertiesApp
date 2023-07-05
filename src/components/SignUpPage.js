@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
+  const navigate = useNavigate(); // React Router's useHistory hook
+
   const [username, setUsername] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [userType, setUserType] = useState('');
@@ -19,9 +22,14 @@ const SignUpPage = () => {
     setEmail('');
     setPassword('');
     setSignedUp(true);
+
+    // Redirect to login page
+    navigate('/login'); // Replace '/login' with the appropriate route for your login page
   };
 
   const renderSignUpForm = () => (
+
+    
     <form onSubmit={handleSubmit} className="signup-form">
       <label>
         Username:
@@ -74,6 +82,7 @@ const SignUpPage = () => {
       <br />
       <button type="submit">Sign Up</button>
     </form>
+    
   );
 
   const renderThankYouMessage = () => (
