@@ -181,3 +181,85 @@ nav {
 .thank-you-message p {
   font-size: 16px;
 }
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-form button[type="submit"] {
+  background-color: #6b6b31;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #5767aa;
+}
+
+.credentials {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.credentials h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.credentials p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.password-reset {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.password-reset h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login-page > .login-form,
+.login-page > .credentials,
+.login-page > .password-reset {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-page button {
+  display: block;
+  margin: 0 auto;
+}
