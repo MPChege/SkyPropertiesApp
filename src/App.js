@@ -1,5 +1,21 @@
 import React from 'react';
 import './App.css';
+
+import LandingHome from './components/LandingHome'; 
+import LandingAbout from './components/LandingAbout';
+import LandingNavbar from './components/LandingNavbar';
+// import { Route } from 'react-router-dom';
+function App() {
+  return(
+    <div className='App'>
+       <LandingHome />
+       <LandingAbout />
+
+    </div>
+  )
+  
+  
+
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -19,6 +35,7 @@ function App() {
     </Router>
     </>
   );
+
 }
 
 export default App;
