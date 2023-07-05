@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url('https://images.unsplash.com/photo-1515541369882-f47fa81d1454?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+  position: relative;
+}
+/* 
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+} */
+
+:root {
+  --mainColor: #315e6b;
+  --mainColorLight: #5767aa;
+  --secondaryColor: #db2b39;
+  --textColor: #fffefe;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(138, 132, 132, 0.1);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: var(--textColor);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--secondaryColor);
+}
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  font-size: 1.8rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+header div,
+nav {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--mainColor);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  header .responsive_nav {
+    transform: translateY(0%);
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-page,
+.signup-page {
+  background-image: url('https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.credentials,
+.signup-form,
+.login-form {
+  background-color: rgba(49, 94, 107, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.credentials h2,
+.signup-form h2,
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Titillium Web", sans-serif;
+  color: var(--textColor);
+}
+
+.credentials p,
+.thank-you-message p {
+  font-size: 16px;
+  color: var(--textColor);
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--textColor);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select,
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"],
+.signup-form select,
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.credentials button[type="submit"],
+.signup-form button[type="submit"],
+.login-form button[type="submit"] {
+  background-color: var(--mainColor);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.credentials button[type="submit"]:hover,
+.signup-form button[type="submit"]:hover,
+.login-form button[type="submit"]:hover {
+  background-color: var(--mainColorLight);
+}
+
+.thank-you-message {
+  text-align: center;
+  color: var(--textColor);
+}
+
+.thank-you-message h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.logout-button {
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--mainColorLight);
+}
+
+.welcome-message {
+  font-size: 24px;
+  font-family: "Titillium Web", sans-serif;
+  color: var(--textColor);
+  margin-bottom: 10px;
 }
