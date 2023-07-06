@@ -18,7 +18,7 @@ function Navbar() {
     <header>
       <h3>Sky Properties</h3>
       <nav ref={navRef}>
-        <a href="/Home">Home</a>
+        <a href="/">Home</a>
         <a href="/login">Sign In</a>
         <a href="/signup">Sign Up</a>
         <button className="nav-btn nav-close-btn" onClick={closeNavbar}>
