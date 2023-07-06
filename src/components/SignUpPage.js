@@ -31,6 +31,7 @@ const SignUpPage = () => {
 
     
     <form onSubmit={handleSubmit} className="signup-form">
+      <h2 style={{textAlign:"center"}} >Sign Up Form</h2><hr/>
       <label>
         Username:
         <input
