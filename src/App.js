@@ -13,6 +13,19 @@ import BuyersHomePage from './components/BuyersHomePage';
 function App() {
   const [user, setUser] = useState(null)
 
+
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
+
+  // if (!user) return <LoginPage setUser={setUser} />;
+
+
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
@@ -22,6 +35,7 @@ function App() {
     });
   }, []);
   if (!user) return <LoginPage setUser={setUser} />;
+
   return (
     <Router>
       <Navbar />
@@ -29,9 +43,10 @@ function App() {
         <Route path="/buyer" element={<BuyersHomePage setUser={setUser} />} />
         <Route exact path="/signup" element={<SignUpPage setUser={setUser}/>} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
-        <Route  path="/home" element={<LandingHome />} />
+        <Route  path="/" element={<LandingHome />} />
         <Route path="/about" element={<LandingAbout />} />
       </Routes>
+       
     </Router>
 
   );
