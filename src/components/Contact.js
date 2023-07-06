@@ -20,7 +20,7 @@ const Div = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 50rem;
     img {
       width: 40px;
       height: 40px;
@@ -36,7 +36,7 @@ const Div = styled.div`
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 3.5rem;
     span {
       display: flex;
       align-items: center;

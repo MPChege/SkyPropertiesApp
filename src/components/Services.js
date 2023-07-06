@@ -13,7 +13,7 @@ const Title = styled.h2`
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 100px;
   // margin-top: 100px;
   // margin-bottom: 100px;
 `;
@@ -21,7 +21,7 @@ const CardContainer = styled.div`
 const Card = styled.div`
   background-color: #fff;
   border-radius: 50px;
-  padding: 100px;
+  padding: 50px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: calc(33.3333% - 20px);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -55,7 +55,7 @@ const Services = () => {
     <ServicesContainer>
       <Title>Services Offered</Title>
       <CardContainer>
-        {/* <Card>
+        <Card>
           <CardImage
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4_PrZvGz0unWiwBb8QR5wIgTcL11X3bh4nQ&usqp=CAU"
             alt="Buy a home"
@@ -65,8 +65,8 @@ const Services = () => {
             Find your place with an immersive photo experience and the most
             listings, including things you won’t find anywhere else.
           </CardDescription>
-        </Card> */}
-        {/* <Card>
+        </Card>
+        <Card>
           <CardImage
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgz4HkRMHQmnw2-unnbin_GtPQQnW2F9t7hg&usqp=CAU"
             alt="Sell a home"
@@ -87,7 +87,7 @@ const Services = () => {
             We’re creating a seamless online experience – from shopping on the
             largest rental network, to applying, to paying rent.
           </CardDescription>
-        </Card> */}
+        </Card>
       </CardContainer>
     </ServicesContainer>
   );
