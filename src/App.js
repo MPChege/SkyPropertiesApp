@@ -1,5 +1,4 @@
 import './App.css';
-import BuyersHomePage from './Components/BuyersHomePage';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -9,6 +8,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import LandingHome from './components/LandingHome'; 
 import LandingAbout from './components/LandingAbout';
+import BuyersHomePage from './components/BuyersHomePage';
 
 function App() {
   const [user, setUser] = useState(null)
