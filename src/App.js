@@ -1,5 +1,4 @@
 import './App.css';
-import BuyersHomePage from './Components/BuyersHomePage';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -9,7 +8,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import LandingHome from './components/LandingHome'; 
 import LandingAbout from './components/LandingAbout';
-
 function App() {
   const [user, setUser] = useState(null)
 
@@ -21,23 +19,22 @@ function App() {
       }
     });
   }, []);
+
   if (!user) return <LoginPage setUser={setUser} />;
+
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/buyer" element={<BuyersHomePage setUser={setUser} />} />
         <Route exact path="/signup" element={<SignUpPage setUser={setUser}/>} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
         <Route  path="/home" element={<LandingHome />} />
         <Route path="/about" element={<LandingAbout />} />
       </Routes>
     </Router>
-
   );
 
 }
 
 
 export default App;
-
