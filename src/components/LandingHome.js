@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import LandingAbout from "./LandingAbout";
-
-
+import { useNavigate } from 'react-router-dom';
 const BackgroundImage = styled.div`
   position: relative;
   height: 100vh;
