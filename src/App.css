@@ -125,7 +125,7 @@ nav {
 
 .login-page,
 .signup-page {
-  background-image: url('https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+  background-image: url('https://images.unsplash.com/photo-1455593984172-9f753a2e1ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -133,6 +133,7 @@ nav {
   width: 100vw;
   display: flex;
   align-items: center;
+  color: white;
   justify-content: center;
 }
 
@@ -230,11 +231,15 @@ nav {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logout-button:hover {
   background-color: var(--mainColorLight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .welcome-message {
   font-size: 24px;

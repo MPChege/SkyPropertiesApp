@@ -1,102 +1,106 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const SignUpPage = () => {
-  const navigate = useNavigate(); // React Router's useHistory hook
+const SignUpPage = ({ setUser }) => {
+  // const navigate = useNavigate(); // React Router's useHistory hook
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
+  const [role, setRole] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("")
 
-  const [username, setUsername] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [userType, setUserType] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [signedUp, setSignedUp] = useState(false);
-
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    // Perform sign-up logic or API call here
+    fetch("/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        email,
+        role,
+        phone,
+      }),
+    })
+      .then(async (response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          const data = await response.json();
+          throw new Error(data.error);
+        }
+      })
+      .then((user) => {
+        setUser(user);
+        setError(""); // Reset the error state if login is successful
+        // if (user.role.toLowerCase() === "seller") {
+        //   navigate("/seller");
+        // } else if (user.role.toLowerCase() === "buyer") {
+        //   navigate("/buyer"); // Add a forward slash before "buyer"
+        // }
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  }
 
-    // Reset form fields
-    setUsername('');
-    setPhoneNumber('');
-    setUserType('');
-    setEmail('');
-    setPassword('');
-    setSignedUp(true);
-
-    // Redirect to login page
-    navigate('/login'); // Replace '/login' with the appropriate route for your login page
-  };
-
-  const renderSignUpForm = () => (
-
-    
+  return (
     <form onSubmit={handleSubmit} className="signup-form">
-      <label>
-        Username:
+      <h2>Sign up</h2>
+      {error && <p>{error}</p>}
+      <div className="form-group">
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
+          id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-      </label>
-      <br />
-      <label>
-        Phone Number:
+      </div>
+      <div className="form-group">
+        <label htmlFor="phone">Phone Number:</label>
         <input
           type="text"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          id="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
         />
-      </label>
-      <br />
-      <label>
-        User Type:
-        <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+      </div>
+      <div className="form-group">
+        <label htmlFor="role">User Type:</label>
+        <select
+          id="role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+        >
           <option value="">Select...</option>
           <option value="buyer">Buyer</option>
           <option value="seller">Seller</option>
         </select>
-      </label>
-      <br />
-      {userType && (
-        <>
-          <label>
-            Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-          <br />
-        </>
-      )}
-      <label>
-        Password:
+      </div>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
+          id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </label>
-      <br />
+      </div>
       <button type="submit">Sign Up</button>
     </form>
-    
-  );
-
-  const renderThankYouMessage = () => (
-    <div className="thank-you-message">
-      <h2>Thank you for signing up!</h2>
-      <p>Your account has been created.</p>
-      <button onClick={() => setSignedUp(false)}>Login</button>
-    </div>
-  );
-
-  return (
-    <div className="signup-page">
-      {signedUp ? renderThankYouMessage() : renderSignUpForm()}
-    </div>
   );
 };
 

@@ -1,52 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-
+const LoginPage = ({ setUser }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  // const navigate = useNavigate()
+  
   const handleLogin = (e) => {
     e.preventDefault();
-    // Perform login logic or API call here
-    // Check user credentials and set loggedIn state accordingly
-
-    setLoggedIn(true);
+  
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return response.json().then((data) => {
+            throw new Error(data.error);
+          });
+        }
+      })
+      .then((user) => {
+        setUser(user);
+        setError(""); // Reset the error state if login is successful
+  
+        // if (user.role.toLowerCase() === "seller") {
+        //   navigate("/seller");
+        // } else if (user.role.toLowerCase() === "buyer") {
+        //   navigate("/buyer"); // Add a forward slash before "buyer"
+        // }
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
+  
 
-  const handleLogout = () => {
-    setLoggedIn(false);
-  };
-
-  const renderCredentials = () => {
-    // Determine the user's role based on their selection during signup or login
-    const userRole = ''; // Set the user's role here (buyer or seller)
-
-    let roleCredentials;
-    if (userRole === 'buyer') {
-      roleCredentials = <p>Buyer's credentials</p>;
-    } else if (userRole === 'seller') {
-      roleCredentials = <p>Seller's credentials</p>;
-    }
-
-    return (
-      <div className="credentials">
-        <h2>Welcome!</h2>
-        {roleCredentials}
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    );
-  };
-
-  const renderLoginForm = () => (
+  return (
     <form onSubmit={handleLogin} className="login-form">
       <h2>Login</h2>
+      {error && <p>{error}</p>}
       <div className="form-group">
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="username">Username:</label>
         <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div className="form-group">
@@ -60,16 +66,6 @@ const LoginPage = () => {
       </div>
       <button type="submit">Login</button>
     </form>
-  );
-
-  return (
-    <div className="login-page">
-      {loggedIn ? (
-        renderCredentials()
-      ) : (
-        renderLoginForm()
-      )}
-    </div>
   );
 };
 
