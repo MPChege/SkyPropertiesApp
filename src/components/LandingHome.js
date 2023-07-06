@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import LandingAbout from "./LandingAbout";
+
 
 const BackgroundImage = styled.div`
   position: relative;
@@ -50,7 +52,7 @@ const LandingHome = () => {
         <ContentWrapper>
           <Title>SKYPROPERTIES</Title>
           <Subtitle>
-            Welcome to our House Dealership. Find your dream home today.
+            Welcome to our House Dealership. Find your dream home today
           </Subtitle>
           <Quote>"Home is where your story begins."</Quote>
         </ContentWrapper>
