@@ -12,8 +12,9 @@
   position: relative;
   gap: 20px;
   top: 70px;
+}
   
-    > *{
+     *{
       width: 100vh;
       height: calc(100vh-70px);
     }
