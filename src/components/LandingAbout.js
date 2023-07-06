@@ -18,7 +18,7 @@ const Description = styled.p`
   line-height: 1.5;
 `;
 
-const LandingAbout = () => {
+export const LandingAbout = () => {
   return (
     <AboutContainer>
       <Title>About Us</Title>
