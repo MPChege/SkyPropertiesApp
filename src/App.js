@@ -1,12 +1,16 @@
 
 import './App.css';
+import BuyersHomePage from './Components/BuyersHomePage';
 
 function App() {
   return (
 
-    <div> hello world </div>
-    
+    <div>
+      <BuyersHomePage/>
+    </div>
+
   );
 }
 
 export default App;
+
