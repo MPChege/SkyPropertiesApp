@@ -1,0 +1,38 @@
+.contact {
+    background: #fafafa;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input,
+  textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0069d9;
+  }
+  
